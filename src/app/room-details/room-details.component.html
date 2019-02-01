@@ -1,0 +1,179 @@
+<app-navbar> </app-navbar>
+<div class="breadcrumbs1_wrapper">
+  <div class="container">
+    <div class="breadcrumbs1"><a href="index-2.html">Home</a><span>|</span>Details</div>
+  </div>
+</div>
+<div id="content">
+  <div class="container">
+
+    <div class="title1">{{roomDetails.roomType}}</div>
+
+    <div class="title2">Sophisticated and airy rooms elevated by high ceilings and tall windows. Your peaceful
+      oasis where historic authenticity meets delicate luxury.</div>
+
+    <div class="slider2-wrapper">
+      <div class="slider-for2">
+
+        <div class="slider-item">
+          <img src="assets/uploads/{{galleryDetails.picture1}}" alt="" class="img-fluid">
+        </div>
+
+        <div class="slider-item">
+          <img src="assets/uploads/{{galleryDetails.picture2}}" alt="" class="img-fluid">
+        </div>
+        <div class="slider-item">
+          <img src="assets/uploads/{{galleryDetails.picture3}}" alt="" class="img-fluid">
+        </div>
+        <div class="slider-item">
+          <img src="assets/uploads/{{galleryDetails.picture4}}" alt="" class="img-fluid">
+        </div>
+      </div>
+
+      <div class="slider-nav2">
+
+        <div class="slider-item">
+          <div class="slider-item-inner">
+            <img src="assets/uploads/{{galleryDetails.thumb1}}" alt="" class="img-fluid">
+          </div>
+        </div>
+
+        <div class="slider-item">
+          <div class="slider-item-inner">
+            <img src="assets/uploads/{{galleryDetails.thumb2}}" alt="" class="img-fluid">
+          </div>
+        </div>
+        <div class="slider-item">
+          <div class="slider-item-inner">
+            <img src="assets/uploads/{{galleryDetails.thumb3}}" alt="" class="img-fluid">
+          </div>
+        </div>
+        <div class="slider-item">
+          <div class="slider-item-inner">
+            <img src="assets/uploads/{{galleryDetails.thumb4}}" alt="" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="details-wrapper clearfix">
+
+      <div class="txt2">{{roomDetails.roomType}}</div>
+      <div class="txt3">
+        {{roomDetails.roomDescription}}
+      </div>
+      <div class="details-caption">
+        <div class="txt21">{{roomDetails.roomType}}</div>
+      </div>
+    </div>
+
+    <div class="details2-wrapper">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="our-rooms-icons">
+            <div class="our-rooms-icon">
+              <figure><img src="assets/images/ic14.png" alt="" class="img-fluid"></figure>
+              <div class="our-rooms-icon-txt1">Car Parking Available</div>
+              <div class="our-rooms-icon-txt2">INCLUDES</div>
+            </div>
+            <div class="our-rooms-icon">
+              <figure><img src="assets/images/ic12.png" alt="" class="img-fluid"></figure>
+              <div class="our-rooms-icon-txt1">Breakfast</div>
+              <div class="our-rooms-icon-txt2">INCLUDES</div>
+            </div>
+            <div class="our-rooms-icon">
+              <figure><img src="assets/images/ic13.png" alt="" class="img-fluid"></figure>
+              <div class="our-rooms-icon-txt1">Transfer from Airport</div>
+              <div class="our-rooms-icon-txt2">INCLUDES</div>
+            </div>
+            <div class="our-rooms-icon">
+              <figure><img src="assets/images/ic11.png" alt="" class="img-fluid"></figure>
+              <div class="our-rooms-icon-txt1">Free WiFi AROUND the DELVATORE</div>
+              <div class="our-rooms-icon-txt2">INCLUDES</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="our-rooms-icons">
+            <div class="our-rooms-icon">
+              <figure><img src="assets/images/ic15.png" alt="" class="img-fluid"></figure>
+              <div class="our-rooms-icon-txt1">Security safe Available</div>
+              <div class="our-rooms-icon-txt2">INCLUDES</div>
+            </div>
+            <div class="our-rooms-icon">
+              <figure><img src="assets/images/ic17.png" alt="" class="img-fluid"></figure>
+              <div class="our-rooms-icon-txt1">Restaurant</div>
+              <div class="our-rooms-icon-txt2">DOESN’T INCLUDE</div>
+            </div>
+            <div class="our-rooms-icon">
+              <figure><img src="assets/images/ic18.png" alt="" class="img-fluid"></figure>
+              <div class="our-rooms-icon-txt1">Air Conditioning</div>
+              <div class="our-rooms-icon-txt2">AVAILABLE</div>
+            </div>
+            <div class="our-rooms-icon">
+              <figure><img src="assets/images/ic16.png" alt="" class="img-fluid"></figure>
+              <div class="our-rooms-icon-txt1">GRAND CASINO Hotel DELVATORE</div>
+              <div class="our-rooms-icon-txt2">100$ FREE CHIPS INCLUDES</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="details2-info">
+            <div class="check1">LOREM IPSUM: <span>AVAILABLE</span></div>
+            <div class="check1">DEPOSIT: <span>REQUIRED 20%</span></div>
+            <div>
+              <span class="details2-link" (click)="makePayment(roomDetails.roomTypeId)">
+                <div class="txt1">&#8358;{{roomDetails.roomAmount | number: '1.0-0'}} <span>Click to Pay</span></div>
+                <div class="txt2">PAY AND RESERVE THIS ROOM</div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="title3">Make Further Enquiry</div>
+
+    <div id="note"></div>
+    <div id="fields">
+      <form id="ajax-contact-form" class="form-horizontal clearfix" action="javascript:;">
+        <div class="row">
+          <div class="col-md-6">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="inputName2">Name <span>*</span></label>
+                  <input type="text" class="form-control" id="inputName2" name="name" value="" placeholder="">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="inputEmail">Email <span>*</span></label>
+                  <input type="text" class="form-control" id="inputEmail" name="email" value="" placeholder="">
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="inputMessage2">Message <span>*</span></label>
+              <textarea class="form-control" rows="5" id="inputMessage2" name="content" placeholder=""></textarea>
+            </div>
+
+          </div>
+
+        </div>
+
+        <button type="submit" class="btn-default btn-cf-submit">send your message</button>
+      </form>
+    </div>
+
+
+  </div>
+</div>
+
+<app-footer></app-footer>

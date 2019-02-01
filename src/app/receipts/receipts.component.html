@@ -1,0 +1,33 @@
+<app-header></app-header>
+<div id="content">
+  <div class="container">
+
+    <div class="title3">Your payment was successful. You can download your receipt here</div>
+
+    <table class="table table-bordered">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Description</th>
+          <th scope="col">Download</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tran of transactionList">
+          <th scope="row">1</th>
+          <td>Payment Receipt for {{tran.roomTypeId.roomType}}</td>
+          <td>
+            <img (click)="downloadReceipt(tran.guestId.guestId)" src="assets/images/download.png" alt="" height="50" width="100"
+              class="img-fluid" class="receiptclick" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+   
+  
+   
+</div>
+
+<app-footer></app-footer>

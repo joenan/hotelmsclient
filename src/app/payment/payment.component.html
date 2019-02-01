@@ -1,0 +1,191 @@
+ 
+ <app-navbar></app-navbar>
+    <div id="main">
+  
+      <div id="content">
+        <div class="container">
+  
+          <div class="title1">Payment Information For</div>
+  
+          <div class="title2">Fill the form below and proceed to pay
+            &#x20a6; for {{roomDetails.roomAmount}}</div>
+  
+          <div id="note"></div>
+          <div id="fields">
+            <form #paymentForm="ngForm" id="ajax-contact-form"
+              class="form-horizontal clearfix" action="javascript:;">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="inputName2">Name <span>*</span></label> <input
+                          type="text" class="form-control" id="inputName2"
+                          [(ngModel)]="name" name="name" value="" placeholder="">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="inputEmail">Email <span>*</span></label> <input
+                          type="text" class="form-control" id="inputEmail"
+                          [(ngModel)]="email" name="email" value="" placeholder="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="inputName2">Phone <span>*</span></label> <input
+                          type="text" class="form-control" id="inputName2"
+                          [(ngModel)]="phone" name="phone" value="" placeholder="">
+                      </div>
+  
+  
+                      <!-- <input type="hidden" class="form-control" id="amount" [(ngModel)]="amount" name="amount" value={{roomDetails.roomAmount}}> -->
+  
+  
+                    </div>
+  
+                    <button angular4-paystack
+                      [key]="key"
+                      email="{{email}}" [amount]="amount" [ref]="ref"
+                      [class]="'btn btn-primary'" (close)="paymentCancel()"
+                      (callback)="paymentDone($event)">Pay with Paystack</button>
+  
+  
+                  </div>
+                </div>
+  
+              </div>
+  
+  
+            </form>
+          </div>
+  
+  
+        </div>
+      </div>
+      <div class="bot1-wrapper">
+        <div class="container">
+          <div class="bot1 clearfix">
+            <div class="logo2_wrapper">
+              <a href="index-2.html" class="logo2"> <img
+                src="assets/images//logo2.png" alt="" class="img-fluid">
+              </a>
+            </div>
+            <div class="social2-wrapper">
+              <ul class="social2">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+              </ul>
+            </div>
+            <p>
+              <i>Excepteur sint occaecat cupidatat non proident, sunt in
+                culpa officia deserunt mollitid est<br>laborum. Sed ut
+                perspiciatis unde qui omnis.
+              </i>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bot2-wrapper">
+        <div class="container">
+          <div class="bot2 clearfix">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="bot2-title">Contact Info</div>
+                <div class="contact1">
+                  <b>A:</b> 41 Gridgum Sreet 121/2 New-York, USA
+                </div>
+                <div class="contact1">
+                  <b>P:</b> (00) 123 456 789
+                </div>
+                <div class="contact1">
+                  <b>F:</b> (00) 987 654 321
+                </div>
+                <div class="contact1">
+                  <b>E:</b> <a href="#">info.contact@yourdomain.com</a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="bot2-title">recent posts</div>
+                <div class="recent-post clearfix">
+                  <a href="#">
+                    <figure>
+                      <img src="assets/images//recent01.jpg" alt=""
+                        class="img-fluid">
+                    </figure>
+                    <div class="caption">
+                      <div class="txt1">New Aqua Park Near The Hotel Delvatore</div>
+                      <div class="txt2">11 March, 2018</div>
+                    </div>
+                  </a>
+                </div>
+                <div class="recent-post clearfix">
+                  <a href="#">
+                    <figure>
+                      <img src="assets/images//recent02.jpg" alt=""
+                        class="img-fluid">
+                    </figure>
+                    <div class="caption">
+                      <div class="txt1">Lorem ipsum dolor site amet concateur</div>
+                      <div class="txt2">23 March, 2018</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="bot2-title">BEST PLACES AROUND DELVATORE</div>
+                <ul class="best1 clearfix">
+                  <li><a href="#"><img src="assets/images//best01.jpg"
+                      alt="" class="img-fluid"></a></li>
+                  <li><a href="#"><img src="assets/images//best02.jpg"
+                      alt="" class="img-fluid"></a></li>
+                  <li><a href="#"><img src="assets/images//best03.jpg"
+                      alt="" class="img-fluid"></a></li>
+                  <li><a href="#"><img src="assets/images//best04.jpg"
+                      alt="" class="img-fluid"></a></li>
+                  <li><a href="#"><img src="assets/images//best05.jpg"
+                      alt="" class="img-fluid"></a></li>
+                  <li><a href="#"><img src="assets/images//best06.jpg"
+                      alt="" class="img-fluid"></a></li>
+                  <li><a href="#"><img src="assets/images//best07.jpg"
+                      alt="" class="img-fluid"></a></li>
+                  <li><a href="#"><img src="assets/images//best08.jpg"
+                      alt="" class="img-fluid"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bot3-wrapper">
+        <div class="container">
+          <div class="bot3 clearfix">
+            <ul class="menu-bot">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Customer Service</a></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+  
+            <div class="copyrights">
+              Copyright @2018 Made with <i class="fa fa-heart"
+                aria-hidden="true"></i> By <a href="#" target="_blank">Mecovache</a>.
+              All Rights Reserve
+            </div>
+  
+          </div>
+        </div>
+      </div>
+  
+  
+    </div>
+  
+ 

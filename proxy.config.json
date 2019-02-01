@@ -1,0 +1,13 @@
+ 
+  {
+    "/api": {
+      "target": "http://localhost:3535/hotelms",
+      "secure": false,
+      "pathRewrite": {
+        "^/api": ""
+      },
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  }
+   
