@@ -19,6 +19,7 @@ export class PaymentComponent implements OnInit {
   savedGuestId: any;
   ref: number;
   amount: number;
+  amountToPay: number;
   key: any = "pk_test_e8338d5ffd6bd6da53fd9175001ec5fdc26a48bd";
 
 
@@ -37,6 +38,7 @@ export class PaymentComponent implements OnInit {
       this.roomDetails = response;
       console.log(this.roomDetails.roomType)
       this.amount = this.roomDetails.roomAmount;
+      this.amountToPay = this.amount * 100;
       this.ref = Math.floor(Math.random() * 9000000000) + 1000000000;
 
     });
@@ -69,7 +71,6 @@ export class PaymentComponent implements OnInit {
     }
 
     console.log(transaction);
-
     this.service.saveTransactionDetails(transaction).subscribe(response => {
       this.savedTransaction = response;
       this.savedGuestId = this.savedTransaction.guestId.guestId;

@@ -48,14 +48,14 @@
   
   
                     </div>
-  
                     <button angular4-paystack
                       [key]="key"
-                      email="{{email}}" [amount]="amount" [ref]="ref"
-                      [class]="'btn btn-primary'" (close)="paymentCancel()"
+                      email="{{email}}" 
+                      [amount]="amountToPay" 
+                      [ref]="ref"
+                      [class]="'btn btn-primary'" 
+                      (close)="paymentCancel()"
                       (callback)="paymentDone($event)">Pay with Paystack</button>
-  
-  
                   </div>
                 </div>
   

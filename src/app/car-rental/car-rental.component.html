@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<div class="breadcrumbs1_wrapper">
+  <div class="container">
+    <div class="breadcrumbs1"><a href="index-2.html">Home</a><span>|</span>About us</div>
+  </div>
+</div>
+
+
+<div id="our-team">
+  <div class="container">
+
+    <div class="title0">our Gallery of Cars</div>
+    <div class="title1">Rent a Car</div>
+    <div class="title2">You can rent a car at your convenience at an affordable rate</div>
+
+    <div class="row">
+      <div *ngFor="let list of carBookingList" class="col-md-6 col-xl-3">
+        <div class="our-team-wrapper">
+          <div class="our-team-inner">
+            <div class="our-team clearfix">
+              <div class="caption">
+                <div class="txt2">per day</div>
+                <div class="txt1">&#x20a6;{{list.carPrice}}</div>
+              </div>
+              <figure>
+                <img src="assets/uploads/{{list.carPhoto}}" alt="" class="img-fluid">
+                <div class="social3-wrapper">
+                  <ul class="social3">
+                    <li><a>{{list.carDescription}}</a></li>
+                  </ul>
+                </div>
+              </figure>
+              <div class="caption">
+                <button (click)="bookNowClicked(list.carName, list.carId)" class="btn-form1-submit">Book Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+</div>
+
+<app-footer></app-footer>

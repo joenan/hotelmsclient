@@ -11,7 +11,7 @@ import { ApiService } from '../service/api.service';
 export class HomeComponent implements OnInit, AfterContentInit {
 
   logo: any = '';
-  footer: any = '';
+  footer: any = {};
   places: any = [];
   public room: any = [];
   aboutUsInformationList: any = [];
@@ -56,7 +56,6 @@ export class HomeComponent implements OnInit, AfterContentInit {
   getFooterInformation() {
     return this.service.getPageFooter().subscribe(res => {
       this.footer = res;
-
     });
   }
   getBestPlacesAroundTheHotel() {
@@ -69,6 +68,7 @@ export class HomeComponent implements OnInit, AfterContentInit {
   getAboutUsInformation() {
     return this.service.getAboutUsInformation().subscribe(res => {
       this.aboutUsInformationList = res;
+      // console.log(this.aboutUsInformationList)
     });
   }
 
@@ -82,7 +82,7 @@ export class HomeComponent implements OnInit, AfterContentInit {
   getBackgroundImages() {
     return this.service.getBackgroundPictures().subscribe(res => {
       this.pic = res;
-      console.log(this.pic)
+      // console.log(this.pic)
     });
   }
 

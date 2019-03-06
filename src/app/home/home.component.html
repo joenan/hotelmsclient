@@ -31,11 +31,9 @@
 							</ul>
 						</div>
 						<div class="account dropdown">
-							<a class="dropdown-toggle" href="#" role="button" id="dropdownAccount2" data-toggle="dropdown" aria-haspopup="true"
+							<a href="/admin"  class="dropdown-toggle" role="button" id="dropdownAccount2" data-toggle="dropdown" aria-haspopup="true"
 							 aria-expanded="false"> Sign in </a>
-							<div class="dropdown-menu" aria-labelledby="dropdownAccount2">
-								<a class="dropdown-item" href="#">EDIT PROFILE</a> <a class="dropdown-item" href="#">SIGN OUT</a>
-							</div>
+							 
 						</div>
 					</div>
 				</div>
@@ -62,8 +60,16 @@
 											 aria-hidden="true"></i></a>
 									</li>
 									<li class="nav-item"><a href="#about" class="nav-link">About us</a></li>
-									<li class="nav-item"><a href="#rooms" class="nav-link">Our Rooms</a></li>
-
+									<li class="nav-item"><a href="/rooms" class="nav-link">Book a Room</a></li>
+									<li class="nav-item sub-menu sub-menu-2"><a class="nav-link">Other Booking & Rentals <i class="fa fa-angle-down"
+										aria-hidden="true"></i></a>
+									<div class="sf-mega">
+									  <ul>
+										<li><a href="/carbooking">Car Booking</a></li>
+										<li><a href="/eventbooking">Book our Hall or Garden for Events</a></li>
+									  </ul>
+									</div>
+								  </li>
 
 									<li class="nav-item"><a href="contacts.html" class="nav-link">Contact</a></li>
 								</ul>
@@ -208,31 +214,84 @@
 
 			<div class="title1">LITTLE ABOUT US</div>
 
-			<div class="title2"></div>
+			<div class="title2">{{aboutUsInformationList[1]?.header}}</div>
 
 			<div class="about-slider-wrapper clearfix">
 				<div class="about-slider-left">
 					<figure class="about-slider-thumb">
-						<img src="assets/images/about00.jpg" alt="" class="img-fluid">
+						<img src="images/about00.jpg" alt="" class="img-fluid">
 					</figure>
 					<div class="slider-for">
-						<div *ngFor="let image of aboutUsInformationList" class="slider-item">
-							<img src="assets/uploads/{{image.slidePhoto}}" alt="" class="img-fluid">
+						<div class="slider-item">
+							<img src="assets/uploads/{{aboutUsInformationList[0]?.slidingPhoto}}" alt="" class="img-fluid">
+						</div>
+						<div class="slider-item">
+							<img src="assets/uploads/{{aboutUsInformationList[1]?.slidingPhoto}}" alt="" class="img-fluid">
+						</div>
+						<div class="slider-item">
+							<img src="assets/uploads/{{aboutUsInformationList[2]?.slidingPhoto}}" alt="" class="img-fluid">
 						</div>
 					</div>
 				</div>
 				<div class="about-slider-right">
 					<div class="slider-nav">
-						<div *ngFor="let text of aboutUsInformationList" class="slider-item">
-							<div class="txt1">{{text.header}}</div>
-							<div class="txt2">
-								<p>{{text.bodyText | truncate : 1000 : " ...." }}</p>
+						<div class="slider-item">
+							<div class="txt1">
+								{{aboutUsInformationList[0]?.header}}
 							</div>
-							<div class="txt3">GEORGE BAGRATION</div>
-							<div class="txt4">MANAGER</div>
-							<div class="txt5">HOTEL DELVATORE</div>
+							<div class="txt2">
+								<p>
+									{{aboutUsInformationList[0]?.bodyText}}
+								</p>
+							</div>
+							<div class="txt3">
+								GEORGE BAGRATION
+							</div>
+							<div class="txt4">
+								MANAGER
+							</div>
+							<div class="txt5">
+								HOTEL DELVATORE
+							</div>
 						</div>
-
+						<div class="slider-item">
+							<div class="txt1">
+								{{aboutUsInformationList[1]?.header}}
+							</div>
+							<div class="txt2">
+								<p>
+									{{aboutUsInformationList[1]?.bodyText}}
+								</p>
+							</div>
+							<div class="txt3">
+								ELENE ERISTAVI
+							</div>
+							<div class="txt4">
+								STAFF MANAGER
+							</div>
+							<div class="txt5">
+								HOTEL DELVATORE
+							</div>
+						</div>
+						<div class="slider-item">
+							<div class="txt1">
+								{{aboutUsInformationList[2]?.header}}
+							</div>
+							<div class="txt2">
+								<p>
+									{{aboutUsInformationList[2]?.bodyText}}
+								</p>
+							</div>
+							<div class="txt3">
+								DAVID ORBELIANI
+							</div>
+							<div class="txt4">
+								ADMINISTRATOR
+							</div>
+							<div class="txt5">
+								HOTEL DELVATORE
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -611,58 +670,15 @@
 		<div class="container">
 			<div class="bot2 clearfix">
 				<div class="row">
-					<div class="col-md-4">
-						<div class="bot2-title">Contact Info</div>
-						<div class="contact1">
-							<b>A:</b> {{footer.address}}
+					<div class="col-md-10" style="margin:auto;">
+						<div class="bot2-title" style="margin:auto; text-align: center;">Contact Info</div>
+						<div class="contact1" style="margin:auto; text-align: centers">
+							<b>A:</b> {{footer.address}} | <b>P:</b> {{footer.phone}} | <b>F:</b>{{footer.phone}} | <b>E:</b>
+							{{footer.email}}
 						</div>
-						<div class="contact1">
-							<b>P:</b> {{footer.phone}}
-						</div>
-						<div class="contact1">
-							<b>F:</b> {{footer.phone}}
-						</div>
-						<div class="contact1">
-							<b>E:</b> <a href="#">{{footer.email}}</a>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="bot2-title">recent posts</div>
-						<div class="recent-post clearfix">
-							<a href="#">
-								<figure>
-									<img src="assets/images/recent01.jpg" alt="" class="img-fluid">
-								</figure>
-								<div class="caption">
-									<div class="txt1">
-										New Aqua Park <br>Near The Hotel DELVATORE
-									</div>
-									<div class="txt2">11 March, 2018</div>
-								</div>
-							</a>
-						</div>
-						<div class="recent-post clearfix">
-							<a href="#">
-								<figure>
-									<img src="assets/images/recent02.jpg" alt="" class="img-fluid">
-								</figure>
-								<div class="caption">
-									<div class="txt1">
-										Botanic Garden <br>Near The Hotel DELVATORE
-									</div>
-									<div class="txt2">23 March, 2018</div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="bot2-title">BEST PLACES AROUND DELVATORE</div>
-						<ul class="best1 clearfix">
-							<li *ngFor="let place of places"><a href="#"><img src="assets/uploads/{{place.slidingPhoto}}" height="50" width="50"
-									 alt="" class="img-fluid"></a></li>
 
-						</ul>
 					</div>
+
 				</div>
 			</div>
 		</div>
@@ -672,15 +688,14 @@
 			<div class="bot3 clearfix">
 				<ul class="menu-bot">
 					<li><a href="#">About</a></li>
-					<li><a href="#">Blog</a></li>
-					<li><a href="#">Customer Service</a></li>
 					<li><a href="#">Terms</a></li>
+					<li><a href="/rooms">Room Booking</a></li>
+					<li><a href="/eventbooking">Event Booking</a></li>
 					<li><a href="#">Contact</a></li>
 				</ul>
 
 				<div class="copyrights">
-					Copyright @2018 Made with <i class="fa fa-heart" aria-hidden="true"></i> By <a href="#" target="_blank">Mecovache</a>.
-					All Rights Reserve
+					Copyright @{{footer.copyright}}
 				</div>
 
 			</div>

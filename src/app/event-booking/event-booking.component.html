@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+
+<div id="content">
+  <div class="container">
+
+    <div class="title1">Our Halls and Gardens for your Events</div>
+    <div class="title2">You can Book our Halls for your events at an affordable rate</div>
+
+    <div class="row">
+      <div *ngFor="let list of eventBookingList" class="col-md-6">
+        <div class="latest-news-wrapper">
+          <div class="latest-news-inner">
+            <div class="latest-news clearfix">
+              <figure><img src="assets/uploads/{{list.picture}}" alt="" class="img-fluid"></figure>
+              <div class="caption">
+                <div class="txt1"><a>{{list.name}}</a></div>
+                <div class="txt2"><a>{{list.description}}</a></div>
+                <div class="txt2"><button (click)="bookNowClicked(list.name, list.centerId)" class="btn-form1-submit">Book Now</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

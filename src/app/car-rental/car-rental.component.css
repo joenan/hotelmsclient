@@ -1,0 +1,12 @@
+appearance: none;
+  box-sizing: border-box;
+  border: 1px solid black;
+  background: transparent;
+  font-size: 1.5rem;
+  padding: 8px;
+  ::-webkit-datetime-edit-text { padding: 0 2rem; }
+  ::-webkit-datetime-edit-month-field { text-transform: uppercase; }
+  ::-webkit-datetime-edit-day-field { text-transform: uppercase; }
+  ::-webkit-datetime-edit-year-field { text-transform: uppercase; }
+  ::-webkit-inner-spin-button { display: none; }
+  ::-webkit-calendar-picker-indicator { background: transparent;}

@@ -1,12 +1,12 @@
  
   {
     "/api": {
-      "target": "http://localhost:3535/hotelms",
+      "target": "http://41.207.248.188:8085",
       "secure": false,
       "pathRewrite": {
         "^/api": ""
       },
-      "changeOrigin": true,
+    
       "logLevel": "debug"
     }
   }

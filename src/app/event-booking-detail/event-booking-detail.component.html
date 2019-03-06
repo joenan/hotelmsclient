@@ -1,0 +1,137 @@
+<app-navbar></app-navbar>
+
+<div id="content">
+  <div class="container">
+
+    <div class="title2">Make Payment for and Book your Events</div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="latest-news-wrapper">
+          <div class="latest-news-inner">
+            <div class="latest-news clearfix">
+              <figure><img src="assets/uploads/{{eventCenterEntity.picture}}" alt="" class="img-fluid"></figure>
+              <div class="caption">
+                <div class="txt1"><a>{{eventCenterEntity.name}}</a></div>
+                <div class="txt2">{{eventCenterEntity.description}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+
+        <form>
+          <div *ngIf="show" class="alert alert-success">
+            <strong>Available!</strong> Booking is Available for the specified Date.
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="inputEmail4">CheckIn</label>
+              <input type="date" [(ngModel)]="checkInDate" name="checkInDate" class="form-control" id="inputEmail4"
+                placeholder="Check IN">
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="inputEmail4">CheckOut</label>
+              <input type="date" [(ngModel)]="checkOutDate" name="checkOutDate" class="form-control" id="inputEmail4"
+                placeholder="Check Out">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">.</label>
+              <button type="button" (click)="checkAvailability()" class="btn btn-primary">Check Availability</button>
+            </div>
+          </div>
+        </form>
+
+        <form>
+          <div *ngIf="show" class="alert alert-success">
+            <strong>Available!</strong> Booking is Available for the specified Date.
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="inputEmail4">CheckIn</label>
+              <input type="date" [(ngModel)]="checkInDate" name="checkInDate" class="form-control" id="inputEmail4"
+                placeholder="Check IN">
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="inputEmail4">CheckOut</label>
+              <input type="date" [(ngModel)]="checkOutDate" name="checkOutDate" class="form-control" id="inputEmail4"
+                placeholder="Check Out">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">.</label>
+              <button type="button" (click)="checkAvailability()" class="btn btn-primary">Check Availability</button>
+            </div>
+          </div>
+        </form>
+
+        <form [formGroup]="bookingForm" *ngIf="show">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Name</label>
+              <input type="email" formControlName="name" class="form-control" id="inputEmail4"
+                placeholder="Your Full Name">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Email</label>
+              <input type="email" formControlName="email" [(ngModel)]="email" class="form-control" id="inputEmail4"
+                placeholder="Email">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-8">
+              <label for="inputAddress">Address</label>
+              <input type="text" formControlName="address" class="form-control" id="inputAddress"
+                placeholder="1234 Main St">
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="inputEmail4">Phone</label>
+              <input type="email" formControlName="phone" class="form-control" id="inputEmail4" placeholder="Phone">
+            </div>
+          </div>
+
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">City</label>
+              <input type="text" formControlName="city" class="form-control" id="inputCity" placeholder="City">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputState">State</label>
+              <select formControlName="state" id="inputState" class="form-control">
+                <option selected>Choose...</option>
+                <option *ngFor="let list of statesList">{{list.name}}</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputZip">Zip</label>
+              <input type="text" formControlName="zip" class="form-control" id="inputZip">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-primary" angular4-paystack
+            [key]="'pk_test_e8338d5ffd6bd6da53fd9175001ec5fdc26a48bd'" email='{{email}}' [amount]="amountToPay"
+            [ref]="ref" [class]="'btn btn-primary'" (close)="paymentCancel()" (callback)="paymentDone($event)">Make
+            Payment</button>
+        </form>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>

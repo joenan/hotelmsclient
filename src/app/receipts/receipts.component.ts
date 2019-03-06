@@ -11,7 +11,7 @@ export class ReceiptsComponent implements OnInit {
 
   room: any;
   collectedPaymentId: any;
-  transactionList: any;
+  transactions: any;
 
   constructor(private router: Router, private route: ActivatedRoute, private service: ApiService) { }
 
@@ -20,13 +20,14 @@ export class ReceiptsComponent implements OnInit {
       this.collectedPaymentId = value.id;
       console.log("Transaction Id: " + this.collectedPaymentId);
       this.getTransaction(this.collectedPaymentId);
+      localStorage.removeItem("event");
     });
   }
 
-
   getTransaction(id: any) {
-    return this.service.getTransaction(id).subscribe(response => {
-      this.transactionList = response;
+    return this.service.getTransactionByGuestId(id).subscribe(response => {
+      this.transactions = response;
+      console.log(this.transactions)
     });
   }
 

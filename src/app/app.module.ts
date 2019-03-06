@@ -18,6 +18,11 @@ import { ApiService } from './service/api.service';
 import { TruncateModule } from 'ng2-truncate';
 import { Angular4PaystackModule } from 'angular4-paystack';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CarRentalComponent } from './car-rental/car-rental.component';
+import { CarRentalDetailComponent } from './car-rental-detail/car-rental-detail.component';
+import { BookingReceiptComponent } from './booking-receipt/booking-receipt.component';
+import { EventBookingComponent } from './event-booking/event-booking.component';
+import { EventBookingDetailComponent } from './event-booking-detail/event-booking-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,12 @@ import { NavbarComponent } from './navbar/navbar.component';
     PaymentComponent,
     ReceiptsComponent,
     HeaderComponent,
-    NavbarComponent
+    NavbarComponent,
+    CarRentalComponent,
+    CarRentalDetailComponent,
+    BookingReceiptComponent,
+    EventBookingComponent,
+    EventBookingDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +48,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     FormsModule,
     TruncateModule,
     Angular4PaystackModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
